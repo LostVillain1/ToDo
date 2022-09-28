@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #EA5959;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 32px;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.todo {
+    padding: 32px;
+    background-color: white;
+    width: 90vw;
+    border-radius: 16px;
+}
+
+.todo__content {}
+
+.todo_title {}
+
+.todo__new {
+    display: flex;
+    margin: 16px 0 32px
+}
+
+.todo__new input {
+    margin-right: 16px;
+    padding: 8px 16px;
+    height: 50px;
+    border-radius: 5px;
+    flex-grow: 1;
+}
+
+.todo__add {
+    padding-top: 12px;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
+    background-color: #EA5959;
+    border: 1px solid #000;
+    border-radius: 32px;
+    cursor: pointer;
+}
+
+.todo__list>*:not(:last-child) {
+    margin-bottom: 8px;
+}
+
+.todo__task {
+    display: flex;
+    align-items: center;
+}
+
+.todo__task_completed .todo__task-text {
+    text-decoration: line-through;
+    color: rgb(165, 160, 160)
+}
+
+.todo__checkbox {
+    margin-right: 16px;
+}
+
+.todo__checkbox {
+    margin-right: 16px;
+}
+
+.todo__checkbox input:checked+div::after {
+    display: block;
+    background-color: #EA5959;
+}
+
+.todo__checkbox input {
+    display: none;
+}
+
+.todo__checkbox div {
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    border: 1px solid #EA5959;
+    border-radius: 4px;
+    position: relative;
+    color: white;
+}
+
+.todo__checkbox div::after {
+    content: "\2713";
+    font-weight: 600;
+    display: none;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.todo__task-del {
+    margin-left: auto;
+    margin-right: 0;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    padding-top: 9px;
+}
+
+.trash-can:hover {
+    cursor: pointer;
+    color: blue;
+}
