@@ -12,11 +12,11 @@ if (localStorage.getItem('tasks')) {
 
 tasks.forEach(function(task) {
     const taskCssClass = task.isDone ? 'todo__task todo__task_completed' : 'todo__task'
+    const checked = task.isDone ? 'checked' : ''
     let taskHtml = `
     <div id='${task.id}' class="${taskCssClass}"> 
         <label class="todo__checkbox">
-            <input type="checkbox">
-            <div></div>
+            <input type="checkbox" ${checked}>            
         </label>
         <div class="todo__task-text">${task.text}</div>
         <div id="del" class="todo__task-del">
@@ -54,12 +54,12 @@ function addTask(taskText) {
     tasks.push(newTask)
 
     const taskCssClass = newTask.isDone ? 'todo__task todo__task_completed' : 'todo__task'
+    const checked = newTask.isDone ? 'checked' : ''
 
     const taskHtml = `
     <div id='${newTask.id}' class="${taskCssClass}"> 
         <label class="todo__checkbox">
-            <input type="checkbox">
-            <div></div>
+            <input type="checkbox" ${checked}>            
         </label>
         <div class="todo__task-text">${newTask.text}</div>
         <div id="del" class="todo__task-del">
@@ -70,6 +70,7 @@ function addTask(taskText) {
         </div>
     </div>
     `
+    console.log(newTask.is)
     domElems.tasks.innerHTML = domElems.tasks.innerHTML + taskHtml
     saveInLocalStorage()
 }
